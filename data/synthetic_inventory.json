@@ -1,0 +1,16 @@
+{
+  "principals": [
+    {"principal_id":"usr-finops-admin","principal_type":"user","display_name":"FinOps Admin","provider":"aws","enabled":true,"mfa_enabled":false,"last_used_days":3,"credential_age_days":45,"owner":"Finance Platform","external":false},
+    {"principal_id":"usr-legacy-ops","principal_type":"user","display_name":"Legacy Operations","provider":"azure","enabled":true,"mfa_enabled":true,"last_used_days":132,"credential_age_days":210,"owner":null,"external":false},
+    {"principal_id":"svc-build-bot","principal_type":"service_account","display_name":"Build Bot","provider":"gcp","enabled":true,"mfa_enabled":null,"last_used_days":1,"credential_age_days":274,"owner":"Platform Engineering","external":false},
+    {"principal_id":"usr-vendor-support","principal_type":"user","display_name":"Vendor Support","provider":"azure","enabled":true,"mfa_enabled":true,"last_used_days":8,"credential_age_days":30,"owner":"Infrastructure","external":true},
+    {"principal_id":"usr-readonly-auditor","principal_type":"user","display_name":"Read-only Auditor","provider":"gcp","enabled":true,"mfa_enabled":true,"last_used_days":14,"credential_age_days":20,"owner":"GRC","external":false}
+  ],
+  "grants": [
+    {"grant_id":"g-001","principal_id":"usr-finops-admin","resource":"aws-account-001","permission":"AdministratorAccess","scope":"account","privileged":true,"wildcard":true,"standing_access":true},
+    {"grant_id":"g-002","principal_id":"usr-legacy-ops","resource":"subscription-lab-01","permission":"Owner","scope":"subscription","privileged":true,"wildcard":false,"standing_access":true},
+    {"grant_id":"g-003","principal_id":"svc-build-bot","resource":"project-ci-lab","permission":"artifactregistry.writer","scope":"project","privileged":false,"wildcard":false,"standing_access":true},
+    {"grant_id":"g-004","principal_id":"usr-vendor-support","resource":"subscription-lab-01","permission":"Contributor","scope":"subscription","privileged":true,"wildcard":false,"standing_access":true},
+    {"grant_id":"g-005","principal_id":"usr-readonly-auditor","resource":"project-audit-lab","permission":"viewer","scope":"project","privileged":false,"wildcard":false,"standing_access":true}
+  ]
+}
